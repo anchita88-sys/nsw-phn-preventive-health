@@ -18,13 +18,13 @@
 
 The original NSW PHN report showed that Western and South Western Sydney have high GP billing but the lowest BreastScreen participation. This analysis tests whether that pattern holds across **three organised screening programs**:
 
-| Program | Eligible population (approx.) | AIHW CAN114 sheet |
-|---------|------------------------------|-------------------|
-| **BreastScreen Australia** | Women aged 50–74 | `BreastScreen, PHN` |
-| **National Bowel Cancer Screening Program (NBCSP)** | People aged 50–74 | `NBCSP, PHN` |
-| **National Cervical Screening Program (NCSP)** | People with a cervix aged 25–74 | `NCSP, PHN` |
+| Program | Eligible population (approx.) | Data source |
+|---------|------------------------------|-------------|
+| **BreastScreen Australia** | Women aged 50–74 | AIHW cancer screening data (PHN level) |
+| **National Bowel Cancer Screening Program (NBCSP)** | People aged 50–74 | AIHW cancer screening data (PHN level) |
+| **National Cervical Screening Program (NCSP)** | People with a cervix aged 25–74 | AIHW cancer screening data (PHN level) |
 
-GP utilisation comes from **AIHW PHC 019** (Medicare GP services per 100 population), merged via `MASTER_DATASET.xlsx`.
+GP utilisation comes from **AIHW Medicare GP statistics** (GP services per 100 population), merged via `MASTER_DATASET.xlsx`.
 
 ---
 
@@ -39,7 +39,7 @@ GP utilisation comes from **AIHW PHC 019** (Medicare GP services per 100 populat
 | **Higher gap** | More GP activity relative to screening uptake — suggests a **disconnect** between primary care contact and organised prevention |
 | **Lower gap** | GP utilisation and screening participation are more aligned |
 
-**Mean screening participation** = average of BreastScreen, NBCSP, and NCSP participation rates for each PHN (latest reporting period in CAN114, July 2023 release).
+**Mean screening participation** = average of BreastScreen, NBCSP, and NCSP participation rates for each PHN (latest reporting period available from AIHW, July 2023 release).
 
 ### 3.2 Quadrant classification
 
@@ -54,10 +54,10 @@ Each PHN is classified relative to the **median** GP rate and **median** mean sc
 
 | Element | Source | Notes |
 |---------|--------|-------|
-| GP services per 100 | AIHW PHC 019 | Same as main report |
-| BreastScreen participation | AIHW CAN114 | Women 50–74 |
-| Bowel screening participation | AIHW CAN114 | People 50–74 |
-| Cervical screening participation | AIHW CAN114 | Ages 25–74 summary band |
+| GP services per 100 | AIHW Medicare GP statistics | Same as main report |
+| BreastScreen participation | AIHW cancer screening data | Women 50–74 |
+| Bowel screening participation | AIHW cancer screening data | People 50–74 |
+| Cervical screening participation | AIHW cancer screening data | Ages 25–74 summary band |
 
 Full citations: `06_References/references.md`
 
@@ -136,7 +136,7 @@ Full citations: `06_References/references.md`
 
 ## 7. Limitations
 
-- Screening periods differ slightly across CAN114 tables (latest available column per program).  
+- Screening periods differ slightly across AIHW screening tables (latest available period per program).  
 - GP services include **all** MBS GP attendances, not preventive or screening-related items specifically.  
 - NCSP participation is self-reported program data and may not capture all cervical tests in primary care.  
 - Analysis is PHN-level; SA3/LGA disaggregation (Project 1) would sharpen geographic targeting.
@@ -145,8 +145,8 @@ Full citations: `06_References/references.md`
 
 ## References
 
-1. AIHW. *Primary health care* — PHC 019 (GP MBS services by PHN).  
-2. AIHW. *Cancer screening quarterly data tables* — CAN114 (BreastScreen, NBCSP, NCSP by PHN).  
+1. AIHW. *Primary health care* — Medicare GP services by PHN.  
+2. AIHW. *Cancer screening data* — BreastScreen, bowel (NBCSP), and cervical (NCSP) participation by PHN.  
 3. See `06_References/references.md` for full ABS and AIHW citations from the parent project.
 
 ---
