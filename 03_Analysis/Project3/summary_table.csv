@@ -1,0 +1,11 @@
+phn,gp_services_per_100,breastscreen_pct,bowel_pct,cervical_pct,mean_screening_pct,gp_screening_gap,gap_rank,quadrant
+South Western Sydney,754.25,44.46,36.70,55.78,45.65,16.52,1,High GP / low screening
+Nepean Blue Mountains,750.82,47.37,39.16,56.40,47.64,15.76,2,High GP / low screening
+Western Sydney,696.50,44.36,35.57,55.41,45.11,15.44,3,High GP / low screening
+South Eastern Sydney,663.51,53.79,43.32,61.84,52.98,12.52,4,High GP / higher screening
+North Coast,657.77,55.89,40.99,63.25,53.38,12.32,5,High GP / higher screening
+Murrumbidgee,616.10,58.19,40.31,54.56,51.02,12.08,6,Lower GP / higher screening
+Hunter New England and Central Coast,612.32,55.67,41.87,61.37,52.97,11.56,7,Lower GP / higher screening
+Central & Eastern Sydney,558.23,45.46,37.23,64.53,49.07,11.38,8,Lower GP / low screening
+Western NSW,547.44,55.92,37.44,54.85,49.40,11.08,9,Lower GP / low screening
+Northern Sydney,585.99,48.51,43.11,69.34,53.65,10.92,10,Lower GP / higher screening

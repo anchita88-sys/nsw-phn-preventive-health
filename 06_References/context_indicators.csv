@@ -1,0 +1,6 @@
+indicator,value_pct,geography,publisher,dataset,abs_table,definition
+Overseas-born population,34.6,NSW,ABS,Census 2021 GCP,G09c,Share of persons born outside Australia
+Recent overseas arrivals (2016-2021),21.1,NSW overseas-born,ABS,Census 2021 GCP,G10,Share of overseas-born persons who arrived in Australia in 2016-2021
+Limited English proficiency,4.5,NSW,ABS,Census 2021 GCP,G13c,Persons using another language at home who speak English not well or not at all
+Family complexity (derived),75.1,NSW,ABS,Census 2021 GCP,G29 (derived),Persons in families not in a couple family with no children
+Delayed GP access when needed,29.2,Australia (national),ABS,Patient Experiences 2023-24,Main release,Persons aged 15+ who delayed or did not see a GP when needed in the last 12 months

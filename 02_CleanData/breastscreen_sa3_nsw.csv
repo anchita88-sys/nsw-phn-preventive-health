@@ -1,0 +1,93 @@
+sa3_code,sa3_name,participation_pct,focus_area
+11703.0,Sydney Inner City,39.97,False
+12501.0,Auburn,40.75,True
+11801.0,Eastern Suburbs - North,40.78,False
+11603.0,Mount Druitt,40.85,True
+12703.0,Liverpool,41.2,True
+12503.0,Merrylands - Guildford,41.46,True
+11902.0,Canterbury,41.56,True
+12405.0,St Marys,42.58,True
+12003.0,Strathfield - Burwood - Ashfield,42.75,False
+11901.0,Bankstown,42.77,True
+12701.0,Bringelly - Green Valley,42.99,False
+12502.0,Carlingford,43.87,False
+12302.0,Campbelltown (NSW),44.03,True
+12104.0,North Sydney - Mosman,44.09,False
+12301.0,Camden,45.1,False
+11601.0,Blacktown,45.18,True
+12602.0,Ryde - Hunters Hill,45.45,False
+11904.0,Kogarah - Rockdale,45.56,False
+12001.0,Canada Bay,45.89,False
+11702.0,Marrickville - Sydenham - Petersham,45.92,False
+11903.0,Hurstville,45.95,False
+12702.0,Fairfield,46.09,True
+12201.0,Manly,47.36,False
+10201.0,Gosford,47.36,False
+12303.0,Wollondilly,47.67,False
+12101.0,Chatswood - Lane Cove,48.23,False
+10202.0,Wyong,48.23,False
+10701.0,Dapto - Port Kembla,48.28,False
+12401.0,Blue Mountains,49.17,False
+12403.0,Penrith,49.18,True
+12103.0,Ku-ring-gai,49.3,False
+11602.0,Blacktown - North,49.58,True
+12601.0,Pennant Hills - Epping,49.87,False
+10303.0,Lithgow - Mudgee,49.91,False
+12801.0,Cronulla - Miranda - Caringbah,50.13,False
+11501.0,Baulkham Hills,50.25,False
+11402.0,Southern Highlands,50.39,False
+12203.0,Warringah,50.61,False
+11802.0,Eastern Suburbs - South,50.62,False
+10902.0,Lower Murray,50.71,False
+11502.0,Dural - Wisemans Ferry,50.75,False
+12102.0,Hornsby,50.8,False
+12002.0,Leichhardt,51.23,False
+11401.0,Shoalhaven,51.62,False
+10301.0,Bathurst,51.69,False
+12202.0,Pittwater,52.14,False
+12802.0,Sutherland - Menai - Heathcote,52.45,False
+11203.0,Tweed Valley,52.53,False
+10704.0,Wollongong,52.83,False
+10501.0,Bourke - Cobar - Coonamble,53.19,False
+11201.0,Richmond Valley - Coastal,53.26,False
+10106.0,Young - Yass,53.63,False
+10901.0,Albury,53.97,False
+10703.0,Kiama - Shellharbour,54.0,False
+10903.0,Upper Murray exc. Albury,54.4,False
+10802.0,Kempsey - Nambucca,54.84,False
+10503.0,Dubbo,54.98,False
+10804.0,Port Macquarie,55.38,False
+10601.0,Lower Hunter,55.71,False
+11103.0,Newcastle,55.86,False
+11102.0,Lake Macquarie - West,56.03,False
+11003.0,Moree - Narrabri,56.17,False
+10104.0,South Coast,56.63,False
+10402.0,Coffs Harbour,56.85,False
+10105.0,Goulburn - Mulwaree,56.86,False
+11202.0,Richmond Valley - Hinterland,57.45,False
+11301.0,Griffith - Murrumbidgee (West),57.85,False
+11101.0,Lake Macquarie - East,58.13,False
+10102.0,Queanbeyan,58.41,False
+10801.0,Great Lakes,58.53,False
+10304.0,Orange,58.65,False
+10805.0,Taree - Gloucester,58.74,False
+10603.0,Port Stephens,58.74,False
+11302.0,Tumut - Tumbarumba,58.91,False
+10302.0,Lachlan Valley,59.62,False
+11002.0,Inverell - Tenterfield,60.51,False
+10604.0,Upper Hunter,61.3,False
+10602.0,Maitland,61.35,False
+11303.0,Wagga Wagga,61.37,False
+10502.0,Broken Hill and Far West,61.77,False
+10103.0,Snowy Mountains,62.37,False
+10401.0,Clarence Valley,63.32,False
+11004.0,Tamworth - Gunnedah,63.41,False
+11001.0,Armidale,66.17,False
+10702.0,Illawarra Catchment Reserve,,False
+10803.0,Lord Howe Island,,False
+11503.0,Hawkesbury,,False
+11504.0,Rouse Hill - McGraths Hill,,False
+11701.0,Botany,,False
+12402.0,Blue Mountains - South,,False
+12404.0,Richmond - Windsor,,False
+12504.0,Parramatta,,True

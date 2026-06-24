@@ -1,0 +1,11 @@
+phn_code,phn_name,breastscreen_pct,cervical_pct,bowel_pct,phn
+PHN101,Central and Eastern Sydney,45.46,64.53,37.23,Central & Eastern Sydney
+PHN108,Hunter New England and Central Coast,55.67,61.37,41.87,Hunter New England and Central Coast
+PHN110,Murrumbidgee,58.19,54.56,40.31,Murrumbidgee
+PHN104,Nepean Blue Mountains,47.37,56.40,39.16,Nepean Blue Mountains
+PHN109,North Coast,55.89,63.25,40.99,North Coast
+PHN102,Northern Sydney,48.51,69.34,43.11,Northern Sydney
+PHN106,South Eastern NSW,53.79,61.84,43.32,South Eastern Sydney
+PHN105,South Western Sydney,44.46,55.78,36.70,South Western Sydney
+PHN107,Western NSW,55.92,54.85,37.44,Western NSW
+PHN103,Western Sydney,44.36,55.41,35.57,Western Sydney

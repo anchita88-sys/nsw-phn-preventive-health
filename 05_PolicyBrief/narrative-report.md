@@ -45,15 +45,15 @@ NSW is one of Australia's most culturally diverse states. Preventive programs (l
 
 | Indicator | Value | What it measures | Why it matters for this analysis |
 |-----------|------:|------------------|----------------------------------|
-| Overseas-born population | 34.6% | Share of NSW residents born outside Australia (ABS Census 2021) | Overseas-born populations may face language and navigation barriers to screening programs designed for mainstream audiences |
-| Recent migrants (10 years) | 21.1% | Share who migrated to Australia within the past decade | Newer migrants may have lower awareness of BreastScreen eligibility and booking processes |
-| Non-English speaking households | 4.5% | Households where a language other than English is spoken at home | Language at home is a proxy for communication needs in health promotion and appointment systems |
-| Family complexity indicator | 75.1% | Composite ABS measure of household/family structure complexity | Complex households can affect who receives health messages and who can attend appointments |
-| Delayed GP access when needed | 34.4% | NSW residents who needed to see a GP but delayed or did not go (patient experience survey) | Suggests that **reported access barriers exist at population level** even where Medicare service counts are high |
+| Overseas-born population | 34.6% | Share of NSW residents born outside Australia (ABS Census 2021, table **G09c**) | Overseas-born populations may face language and navigation barriers to screening programs designed for mainstream audiences |
+| Recent overseas arrivals | 21.1% | Share of **overseas-born** NSW residents who arrived in **2016–2021** (ABS Census 2021, table **G10**) | A large share of the overseas-born population migrated recently and may have lower awareness of BreastScreen eligibility and booking processes |
+| Limited English proficiency | 4.5% | Persons who use another language at home and speak English “not well” or “not at all” (ABS Census 2021, table **G13c**) | Identifies the subset of the population most likely to need translated health promotion and appointment support |
+| Family complexity (derived) | 75.1% | Persons in families who are not in a “couple family with no children” (derived from ABS Census 2021, table **G29**) | Households with children, one-parent families, or other structures can affect who receives health messages and who can attend appointments |
+| Delayed GP access when needed | 29.2% | Persons aged 15+ in **Australia** who needed to see a GP but delayed or did not go (ABS *Patient Experiences* 2023–24) | Suggests that **reported access barriers exist at population level** even where Medicare service counts are high |
 
-**How to use these indicators:** They frame the equity question. They do **not** replace PHN-level analysis. PHN-specific GP and BreastScreen data appear in Section 4.
+**How to use these indicators:** They frame the equity question. They do **not** replace PHN-level analysis. PHN-specific GP and BreastScreen data appear in Section 4. Census indicators are **NSW-wide**; the GP access indicator is **national** (NSW-specific figures were not used because they were not cited from a published ABS table in this project).
 
-**Data sources for context indicators:** ABS Census 2021 (GCP/General Community Profile tables); patient access indicator from AIHW/ABS patient experience reporting (NSW aggregate).
+**Data sources for context indicators:** ABS Census 2021 GCP (`GCP_1.xlsx`); ABS *Patient Experiences, Australia, 2023–24*. Full table-level citations are in the References section and `06_References/references.md`.
 
 ---
 
@@ -65,8 +65,8 @@ NSW is one of Australia's most culturally diverse states. Preventive programs (l
 |------------------|---------|-----------|-------|
 | GP service utilisation by PHN | Medicare Benefits Schedule (MBS) primary care statistics | AIHW (*Primary health care*, PHC series) | PHN-level service rates from `aihw-phc-019-data-tables` |
 | BreastScreen participation by PHN | BreastScreen Australia participation data | AIHW (CAN-158 / CAN-165 screening tables) | Participation rate among eligible women in each PHN area |
-| Cultural diversity context | Census 2021 GCP tables | ABS | NSW-wide aggregates |
-| Delayed GP access | Patient experience / access survey | AIHW / ABS | NSW-wide; included as equity context |
+| Cultural diversity context | Census 2021 GCP tables (G09c, G10, G13c, G29) | ABS | NSW-wide aggregates; see `06_References/references.md` |
+| Delayed GP access | *Patient Experiences, Australia* 2023–24 | ABS | Australia (national), 29.2%; equity context only |
 
 ### 3.2 What “GP services per 100 people” means *(read this before the charts)*
 
@@ -215,9 +215,9 @@ The gap between lowest and highest PHN is **15 percentage points** — substanti
 
 **Evidence:**
 
-- **34.4%** of NSW residents delayed or did not access a GP when needed (context indicator)
+- **29.2%** of Australians aged 15+ delayed or did not access a GP when needed (ABS *Patient Experiences* 2023–24; national context indicator)
 - Western/SW Sydney PHNs combine **high GP billing rates** with **low screening** — consistent with a pattern where people **use GPs for some care** but **do not convert** that contact into preventive screening uptake
-- **34.6%** overseas-born and **21.1%** recent migrants statewide increase the likelihood of language and navigation barriers in mainstream screening funnels
+- **34.6%** of NSW residents are overseas-born; **21.1%** of overseas-born residents arrived in 2016–2021 — together these increase the likelihood of language and navigation barriers in mainstream screening funnels
 
 **Why this matters:** Equity policy must address **the quality and navigability of care**, not only service counts. CALD communities may need translated materials, bilingual staff, community champions, and flexible screening locations.
 
@@ -279,11 +279,13 @@ Preventive healthcare access in NSW is **not uniform** across PHNs. The data sho
 
 ## References
 
-1. Australian Institute of Health and Welfare (AIHW). *Primary health care: Medicare Benefits Schedule services* (PHC 019 data tables, 2017–18 to 2024–25).  
-2. AIHW. *BreastScreen Australia monitoring report* and supplementary participation tables (CAN-158, CAN-165).  
-3. Australian Bureau of Statistics (ABS). *Census of Population and Housing, 2021* — General Community Profile (GCP) tables.  
-4. AIHW / ABS patient experience statistics — delayed GP access indicator (NSW aggregate).  
+1. Australian Institute of Health and Welfare (AIHW). *Primary health care: Medicare Benefits Schedule and other universal health-related services* — PHC 019 data tables (2017–18 to 2024–25). https://www.aihw.gov.au/reports/primary-health-care/primary-health-care/latest-release  
+2. AIHW. *BreastScreen Australia monitoring* and supplementary participation tables (CAN-158, CAN-165). https://www.aihw.gov.au/reports/cancer-screening/breastscreen-australia-monitoring/latest-release  
+3. Australian Bureau of Statistics (ABS). *Census of Population and Housing, 2021* — General Community Profile, New South Wales (`GCP_1.xlsx`). Tables **G09c** (country of birth), **G10** (year of arrival), **G13c** (language at home × English proficiency), **G29** (family composition; family complexity derived). https://www.abs.gov.au/census/find-census-data/community-profiles/2021  
+4. ABS. *Patient Experiences, Australia, 2023–24 financial year* — delayed or did not see a GP when needed (29.2%, national). https://www.abs.gov.au/statistics/health/health-services/patient-experiences/2023-24  
 5. Primary Health Network boundaries — Australian Government Department of Health and Aged Care.
+
+See also `06_References/references.md` and `06_References/context_indicators.csv` for the full source audit.
 
 ---
 
