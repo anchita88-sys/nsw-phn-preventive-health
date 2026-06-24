@@ -1,0 +1,38 @@
+---
+description: Plain, human writing style for reports and audience-facing content
+alwaysApply: true
+---
+
+# Writing style
+
+## No em dashes
+
+Never use the em dash character (`—`) in any output.
+
+Use instead:
+- A full stop and a new sentence
+- A comma
+- A colon
+- Parentheses for short asides
+
+For number ranges (ages, years), use a hyphen: `50-74`, `2016-2021`.
+
+## Sound human, not AI-generated
+
+Write for a professional public health or policy audience, but in plain English.
+
+Do:
+- Use short, direct sentences
+- Prefer active voice
+- State facts plainly
+- Use everyday words where they are accurate
+
+Do not:
+- Use filler openers ("It's important to note", "In today's landscape", "This underscores")
+- Stack buzzwords ("leverage", "holistic", "robust", "delve", "navigate the landscape")
+- Overuse bold, lists, or symmetrical "Why / Who / How" blocks unless the user asked for that format
+- Write generic conclusions that could apply to any project
+
+## Tone
+
+Professional, clear, and uncomplicated. Read aloud once mentally: if it sounds like marketing copy or a chatbot, rewrite it.
