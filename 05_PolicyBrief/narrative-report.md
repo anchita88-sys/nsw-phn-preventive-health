@@ -13,6 +13,7 @@ Read top to bottom in five parts:
 3. **Methods & definitions** — what each number means and where it comes from  
 4. **Results** — three charts, each with interpretation  
 5. **Findings & policy recommendations** — evidence-backed claims with who should act  
+6. **Follow-on analyses** — continuation of this work (Projects 1, 3, and 5)
 
 > **Format note:** This report is designed as a linear document (like a Google Doc), not a dashboard. Charts appear inline where they are discussed.
 
@@ -274,6 +275,20 @@ The gap between lowest and highest PHN is **15 percentage points** — substanti
 | **Success measure** | Transparent public reporting; equity metrics embedded in PHN annual plans |
 
 Preventive healthcare access in NSW is **not uniform** across PHNs. The data show a clear disconnect in Western Sydney: **high Medicare GP activity alongside the state's lowest BreastScreen participation**. Cultural diversity and access-delay indicators suggest **equity-focused outreach and navigation support** — not GP supply alone — should drive policy.
+
+---
+
+## 7. Follow-on analyses
+
+This report is the first in a series. The analyses below continue the NSW PHN equity work — read them in order for the full picture.
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| **Project 3 — GP vs preventive screening gap** | Breast, bowel, and cervical screening compared with GP utilisation | Complete — see [`project3-gp-screening-gap.md`](project3-gp-screening-gap.md) |
+| **Project 1 — CALD disaggregation at SA3** | Cultural diversity indicators joined to SA3-level screening within Western/SW Sydney | In progress |
+| **Project 5 — PHN access barriers index** | Composite access and navigation barriers score by PHN | In progress |
+
+See `03_Analysis/ROADMAP.md` for methodology and data plans.
 
 ---
 
