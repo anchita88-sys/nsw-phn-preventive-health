@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Project 3 — GP utilisation vs preventive screening gap analysis.
+GP utilisation vs preventive screening gap analysis.
 
 Combines Medicare GP service rates (MASTER_DATASET) with three organised
 screening programs (BreastScreen, NBCSP bowel, NCSP cervical) from CAN114.

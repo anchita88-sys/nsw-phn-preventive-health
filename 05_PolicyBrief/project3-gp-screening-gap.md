@@ -1,6 +1,6 @@
 # GP Utilisation vs Preventive Screening Gap Analysis
 
-**Project 3 — Follow-on analysis to *Preventive Healthcare Access Across NSW PHNs***
+**Follow-on analysis to *Preventive Healthcare Access Across NSW PHNs***
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## 2. Background
 
-The original NSW PHN report showed that Western and South Western Sydney have high GP billing but the lowest BreastScreen participation. Project 3 tests whether that pattern holds across **three organised screening programs**:
+The original NSW PHN report showed that Western and South Western Sydney have high GP billing but the lowest BreastScreen participation. This analysis tests whether that pattern holds across **three organised screening programs**:
 
 | Program | Eligible population (approx.) | AIHW CAN114 sheet |
 |---------|------------------------------|-------------------|

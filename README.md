@@ -36,13 +36,13 @@ A **linear report** (Google Doc / PDF / HTML) answers those questions in order.
 
 | Project | Report | Status |
 |---------|--------|--------|
-| **3 — GP vs screening gap** | [`05_PolicyBrief/project3-gp-screening-gap.md`](05_PolicyBrief/project3-gp-screening-gap.md) · [web](docs/project3.html) | Complete |
+| **GP vs screening gap** | [`05_PolicyBrief/project3-gp-screening-gap.md`](05_PolicyBrief/project3-gp-screening-gap.md) · [web](docs/project3.html) | Complete |
 | **1 — CALD at SA3** | See `03_Analysis/ROADMAP.md` | In progress |
 | **5 — Access barriers index** | `02_CleanData/phn_access_barriers_index.csv` | In progress |
 
 ```bash
-python scripts/extract_preventive_screening_phn.py  # Project 3
-python scripts/build_gp_screening_gap.py              # Project 3
+python scripts/extract_preventive_screening_phn.py
+python scripts/build_gp_screening_gap.py
 python scripts/extract_breastscreen_sa3.py            # Project 1
 python scripts/build_access_index.py                  # Project 5
 ```

@@ -18,7 +18,7 @@
 - **Metric:** Participation rate (%) among eligible women aged 50–74 by PHN
 - **URL:** https://www.aihw.gov.au/reports/cancer-screening/breastscreen-australia-monitoring/latest-release
 
-### 3. Multi-program screening by PHN (Project 3)
+### 3. Multi-program screening by PHN
 
 **AIHW.** Cancer screening quarterly data tables **CAN114** (July 2023 release).
 

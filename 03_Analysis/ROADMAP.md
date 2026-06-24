@@ -10,7 +10,7 @@ Follow-on projects building on **Preventive Healthcare Access Across NSW PHNs**.
 
 ---
 
-## Project 3 — GP utilisation vs preventive screening gap ✅
+## GP utilisation vs preventive screening gap ✅
 
 ### Goal
 Test whether the **GP–BreastScreen disconnect** from the main report extends to **bowel (NBCSP)** and **cervical (NCSP)** screening — a broader picture of preventive care conversion.
@@ -112,7 +112,7 @@ PHNs with **higher barrier index** will have **lower BreastScreen participation*
 ## Suggested order of work
 
 ```
-Done       Project 3 — GP vs multi-program screening gap
+Done       GP vs multi-program screening gap
 Week 1–2   Project 5 foundation (PHN index + GP/screening correlation) ✓ partial
 Week 2–3   Download ABS SA3/LGA Census for Sydney → feed Project 1 & 5
 Week 3–4   Project 1 SA3 analysis (Western/SW Sydney focus)
@@ -126,8 +126,8 @@ Week 4–5   Finalise remaining reports; update portfolio
 ```bash
 pip install -r requirements.txt
 python scripts/extract_breastscreen_sa3.py      # Project 1
-python scripts/extract_preventive_screening_phn.py  # Project 3
-python scripts/build_gp_screening_gap.py        # Project 3
+python scripts/extract_preventive_screening_phn.py
+python scripts/build_gp_screening_gap.py
 python scripts/build_access_index.py            # Project 5
 ```
 
