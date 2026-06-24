@@ -1,0 +1,7 @@
+.DS_Store
+.extract/
+~$*
+*.twbx
+
+# Optional: exclude large raw data from git (sources are linked in references)
+01_RawData/

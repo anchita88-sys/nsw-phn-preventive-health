@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preventive Healthcare Access Across NSW PHNs — Narrative Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --ink: #1a2332;
+      --muted: #4b5563;
+      --line: #d1dae6;
+      --bg: #f4f7fb;
+      --paper: #fff;
+      --accent: #0f5f7a;
+      --accent-bg: #e6f3f8;
+      --finding-bg: #fffbeb;
+      --finding-border: #d97706;
+      --policy-bg: #ecfdf5;
+      --policy-border: #059669;
+      --warn-bg: #fef2f2;
+      --warn-border: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+    .doc {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--paper);
+      padding: 2.5rem 2.75rem 4rem;
+      box-shadow: 0 0 40px rgba(0,0,0,.06);
+    }
+    h1 {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      margin: 0 0 .5rem;
+    }
+    .meta {
+      font-family: system-ui, sans-serif;
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--line);
+    }
+    h2 {
+      font-family: system-ui, sans-serif;
+      font-size: 1.35rem;
+      margin: 2.25rem 0 .75rem;
+      padding-top: .5rem;
+      border-top: 1px solid var(--line);
+    }
+    h2:first-of-type { border-top: none; margin-top: 0; }
+    h3 {
+      font-family: system-ui, sans-serif;
+      font-size: 1.05rem;
+      margin: 1.5rem 0 .5rem;
+    }
+    p { margin: 0 0 1rem; }
+    .toc {
+      background: var(--accent-bg);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 2rem;
+      font-family: system-ui, sans-serif;
+      font-size: .95rem;
+    }
+    .toc strong { display: block; margin-bottom: .5rem; color: var(--accent); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin: .25rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: system-ui, sans-serif;
+      font-size: .88rem;
+      margin: 1rem 0 1.5rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: .55rem .65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f0f4f8; font-weight: 600; }
+    tr.low td { background: #fff7ed; }
+    .def-box {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      margin: 1rem 0 1.5rem;
+      font-family: system-ui, sans-serif;
+      font-size: .92rem;
+    }
+    .def-box strong { color: var(--accent); }
+    .source-tag {
+      display: inline-block;
+      font-family: system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--muted);
+      background: #eef2f7;
+      padding: .25rem .55rem;
+      border-radius: 4px;
+      margin-bottom: .5rem;
+    }
+    .chart-block {
+      margin: 1.25rem 0 1.75rem;
+      padding: 1rem 0;
+      border-top: 1px dashed var(--line);
+      border-bottom: 1px dashed var(--line);
+    }
+    .chart-wrap { height: 340px; margin: .75rem 0; }
+    .axis-note {
+      font-family: system-ui, sans-serif;
+      font-size: .85rem;
+      color: var(--muted);
+      margin: .5rem 0 0;
+    }
+    .finding, .policy {
+      margin: 1.25rem 0;
+      padding: 1.25rem 1.4rem;
+      border-radius: 10px;
+      font-family: system-ui, sans-serif;
+      font-size: .95rem;
+    }
+    .finding {
+      background: var(--finding-bg);
+      border: 2px solid var(--finding-border);
+    }
+    .finding h3, .policy h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      color: var(--ink);
+    }
+    .policy {
+      background: var(--policy-bg);
+      border: 2px solid var(--policy-border);
+    }
+    .evidence { margin: .75rem 0; }
+    .evidence li { margin: .35rem 0; }
+    .label { font-weight: 700; color: var(--accent); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+    .summary-box {
+      background: var(--accent-bg);
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+      margin: 1rem 0 1.5rem;
+      font-family: system-ui, sans-serif;
+    }
+    .summary-box p:last-child { margin-bottom: 0; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--line);
+      font-family: system-ui, sans-serif;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: white; }
+      .doc { box-shadow: none; padding: 1rem; }
+      .chart-wrap { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <article class="doc">
+    <h1>Preventive Healthcare Access Across NSW Primary Health Networks</h1>
+    <p class="meta">Narrative equity report · Read top to bottom · Data: AIHW &amp; ABS · NSW PHN analysis</p>
+
+    <nav class="toc">
+      <strong>How to read this report</strong>
+      <ol>
+        <li>Executive summary</li>
+        <li>Background — why cultural diversity indicators matter</li>
+        <li>Methods &amp; definitions (read before the charts)</li>
+        <li>Results — three charts with sources</li>
+        <li>Findings — evidence for each claim</li>
+        <li>Policy recommendations — who acts and how</li>
+      </ol>
+    </nav>
+
+    <h2>1. Executive summary</h2>
+    <div class="summary-box">
+      <p><strong>Research question:</strong> How does preventive healthcare access vary across NSW PHNs, and how might cultural diversity help explain differences?</p>
+      <p><strong>Headline:</strong> Western Sydney (44.4%) and South Western Sydney (48.1%) have the <strong>lowest BreastScreen participation</strong> despite among the <strong>highest GP Medicare service use</strong> (751 and 754 services per 100 people). More GP visits do not automatically mean better screening uptake.</p>
+      <p><strong>Implication:</strong> Policy must target outreach, language access, and screening pathways — not GP supply alone.</p>
+    </div>
+
+    <h2>2. Background: Why cultural diversity context matters</h2>
+    <p>These NSW-wide indicators explain <em>why we ask an equity question</em>. They do not by themselves explain each PHN’s results — that comes from the PHN-level charts in Section 4.</p>
+    <table>
+      <thead>
+        <tr><th>Indicator</th><th>Value</th><th>What it is</th><th>Why it matters here</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Overseas-born</td><td>34.6%</td><td>ABS Census 2021 — share born outside Australia</td><td>May face language/navigation barriers to screening</td></tr>
+        <tr><td>Recent migrants (10 yr)</td><td>21.1%</td><td>Census — arrived in past decade</td><td>Lower awareness of BreastScreen eligibility</td></tr>
+        <tr><td>Non-English households</td><td>4.5%</td><td>Census — language other than English at home</td><td>Proxy for translation needs in health comms</td></tr>
+        <tr><td>Family complexity</td><td>75.1%</td><td>ABS composite household measure</td><td>Affects who receives and acts on health messages</td></tr>
+        <tr><td>Delayed GP access</td><td>34.4%</td><td>NSW patient experience indicator</td><td>Access barriers exist even where service counts are high</td></tr>
+      </tbody>
+    </table>
+    <p class="source-tag">Sources: ABS Census 2021 (GCP); AIHW/ABS patient experience (NSW aggregate)</p>
+
+    <h2>3. Methods &amp; definitions</h2>
+
+    <div class="def-box">
+      <p><strong>Important — “GP services per 100 people” is NOT “GPs per person”</strong></p>
+      <p>This counts <strong>Medicare-billed GP consultations</strong> (MBS items) per <strong>100 residents</strong> in a year.</p>
+      <p>Example: <strong>754 / 100 people</strong> ≈ 754 GP appointments billed per 100 residents — roughly <strong>7–8 visits per person on average</strong> (including repeat visits). It measures <em>how much the population uses GP services</em>, not how many doctors work in the area.</p>
+    </div>
+
+    <div class="def-box">
+      <p><strong>BreastScreen participation (%)</strong></p>
+      <p>Percentage of <strong>eligible women aged 50–74</strong> who attended BreastScreen Australia in the reporting period. The x-axis on screening charts is always <strong>percent (%)</strong>, ranging from about 44% to 59% across NSW PHNs in this analysis.</p>
+    </div>
+
+    <h3>Data source for each chart</h3>
+    <table>
+      <thead><tr><th>Chart</th><th>Dataset</th><th>Publisher</th></tr></thead>
+      <tbody>
+        <tr><td>GP utilisation by PHN</td><td>MBS primary care statistics (PHC 019)</td><td>AIHW</td></tr>
+        <tr><td>BreastScreen participation</td><td>BreastScreen Australia participation tables</td><td>AIHW (CAN-158 / CAN-165)</td></tr>
+        <tr><td>Scatter plot</td><td>Above two merged by PHN</td><td>Project analysis</td></tr>
+        <tr><td>Context indicators</td><td>Census 2021 GCP</td><td>ABS</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Results</h2>
+
+    <section class="chart-block">
+      <h3>Chart 1 — Medicare GP services by PHN</h3>
+      <p class="source-tag">Source: AIHW Medicare/MBS data · Unit: services per 100 population per year</p>
+      <div class="chart-wrap"><canvas id="gpChart"></canvas></div>
+      <p class="axis-note"><strong>X-axis:</strong> Number of Medicare GP consultation services per 100 people (not number of GPs). <strong>Y-axis:</strong> PHN name.</p>
+      <p>South Western Sydney (754.3) and Western Sydney (750.8) have the highest utilisation. Western NSW has the lowest (547.4).</p>
+    </section>
+
+    <section class="chart-block">
+      <h3>Chart 2 — BreastScreen participation by PHN</h3>
+      <p class="source-tag">Source: AIHW BreastScreen Australia · Unit: % of eligible women screened</p>
+      <div class="chart-wrap"><canvas id="screenChart"></canvas></div>
+      <p class="axis-note"><strong>X-axis:</strong> Participation rate as a <strong>percentage (%)</strong>. <strong>Y-axis:</strong> PHN name. Orange bars = lowest participation PHNs.</p>
+      <p>Western Sydney (44.4%) is lowest; Murrumbidgee (59.4%) is highest — a 15-point gap.</p>
+    </section>
+
+    <section class="chart-block">
+      <h3>Chart 3 — GP utilisation vs BreastScreen participation</h3>
+      <p class="source-tag">Source: AIHW MBS + BreastScreen data merged by PHN</p>
+      <div class="chart-wrap"><canvas id="scatterChart"></canvas></div>
+      <p class="axis-note"><strong>X-axis:</strong> GP Medicare services / 100 people. <strong>Y-axis:</strong> BreastScreen participation (%). Each dot is one PHN.</p>
+      <p>No clear positive trend — high GP use and low screening coexist in Western Sydney PHNs.</p>
+    </section>
+
+    <h3>Full comparison table</h3>
+    <table id="fullTable">
+      <thead><tr><th>PHN</th><th>GP services / 100 people</th><th>BreastScreen (%)</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>5. Findings</h2>
+
+    <div class="finding">
+      <p class="label">Finding 1</p>
+      <h3>Large screening gaps in Western Sydney PHNs</h3>
+      <p><strong>Claim:</strong> Western Sydney and South Western Sydney have the lowest BreastScreen participation in this analysis.</p>
+      <ul class="evidence">
+        <li><strong>Evidence:</strong> Western Sydney <strong>44.4%</strong> (lowest); South Western Sydney <strong>48.1%</strong> (2nd lowest); Murrumbidgee <strong>59.4%</strong> (highest) — gap of <strong>15.0 percentage points</strong>.</li>
+        <li><strong>Why it matters:</strong> Lower screening is linked to later cancer detection and worse outcomes at population level.</li>
+        <li><strong>Caveat:</strong> Data are PHN-level; CALD breakdown within PHNs would strengthen equity analysis.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <p class="label">Finding 2</p>
+      <h3>High GP use does not guarantee high screening</h3>
+      <p><strong>Claim:</strong> PHNs with the most GP Medicare services do not have the highest screening rates.</p>
+      <ul class="evidence">
+        <li><strong>Evidence:</strong> SW Sydney ranks <strong>1st</strong> for GP services (754.3) but <strong>2nd last</strong> for screening (48.1%). Western Sydney ranks <strong>2nd</strong> for GP (750.8) but <strong>last</strong> for screening (44.4%). Murrumbidgee has <strong>moderate</strong> GP use (616.1) but <strong>highest</strong> screening (59.4%).</li>
+        <li><strong>Why it matters:</strong> Expanding GP capacity alone may not close preventive gaps — screening needs dedicated outreach and recall.</li>
+        <li><strong>Caveat:</strong> GP counts include all attendances, not screening referrals specifically.</li>
+      </ul>
+    </div>
+
+    <div class="finding">
+      <p class="label">Finding 3</p>
+      <h3>Access barriers may coexist with high service volume</h3>
+      <p><strong>Claim:</strong> Population indicators suggest navigation and timeliness barriers that preventive policy must address.</p>
+      <ul class="evidence">
+        <li><strong>Evidence:</strong> <strong>34.4%</strong> of NSW residents delayed GP care when needed; <strong>34.6%</strong> overseas-born statewide; Western/SW Sydney show high GP billing + low screening.</li>
+        <li><strong>Why it matters:</strong> CALD communities may need translated pathways, bilingual staff, and community-trusted messengers.</li>
+        <li><strong>Caveat:</strong> CALD indicators are NSW-wide; PHN-level CALD data recommended for next phase.</li>
+      </ul>
+    </div>
+
+    <h2>6. Policy recommendations</h2>
+
+    <div class="policy">
+      <h3>1. Co-design multilingual preventive campaigns</h3>
+      <p><strong>Why:</strong> Low screening in diverse PHNs suggests invitation systems may not reach CALD groups.</p>
+      <p><strong>Who leads:</strong> NSW Health, BreastScreen NSW, Western &amp; SW Sydney PHNs, Multicultural NSW.</p>
+      <p><strong>Partners:</strong> Ethnic councils, faith leaders, settlement services, councils, GP networks.</p>
+      <p><strong>How:</strong> Translate eligibility info; community media; fund bilingual educators; track uptake by language where possible.</p>
+    </div>
+
+    <div class="policy">
+      <h3>2. Expand culturally tailored BreastScreen outreach</h3>
+      <p><strong>Why:</strong> 15-point participation gap requires removing transport, language, and cultural comfort barriers.</p>
+      <p><strong>Who leads:</strong> BreastScreen NSW, PHN commissioning.</p>
+      <p><strong>Partners:</strong> GPs, women's health services, workplaces, community venues.</p>
+      <p><strong>How:</strong> Mobile screening; bilingual booking; evening/weekend clinics; GP recall prompts.</p>
+    </div>
+
+    <div class="policy">
+      <h3>3. Link screening referrals to high-volume GP pathways</h3>
+      <p><strong>Why:</strong> High GP contact without screening conversion — practices are natural touchpoints.</p>
+      <p><strong>Who leads:</strong> PHNs, NSW Ministry of Health, practice data systems.</p>
+      <p><strong>Partners:</strong> RACGP, practice managers, BreastScreen IT teams.</p>
+      <p><strong>How:</strong> Active recall for eligible women; audit referral-to-screen rates in priority PHNs.</p>
+    </div>
+
+    <div class="policy">
+      <h3>4. PHN equity monitoring with CALD disaggregation</h3>
+      <p><strong>Why:</strong> Policy targeting needs local CALD + access data alongside screening.</p>
+      <p><strong>Who leads:</strong> AIHW (data), PHNs (action), ABS (Census).</p>
+      <p><strong>How:</strong> Annual public dashboards combining GP use, screening, and equity indicators.</p>
+    </div>
+
+    <h2>7. Recommended format for audiences</h2>
+    <p>This linear report (or a Google Doc / PDF export of it) is the best format for policy and community readers. Tableau suits analysts exploring data — not general audiences who need a clear story, definitions, and evidence in order.</p>
+    <p>To use in Google Docs: copy from <code>narrative-report.md</code>, or print/save this HTML page as PDF and insert chart screenshots.</p>
+
+    <footer>
+      References: AIHW PHC 019 (Medicare/MBS); AIHW BreastScreen CAN-158/CAN-165; ABS Census 2021 GCP; AIHW/ABS patient experience. Data in MASTER_DATASET.xlsx.
+    </footer>
+  </article>
+
+  <script>
+    const data = [
+      { phn: "Western NSW", gp: 547.4, screen: 57.15, low: false },
+      { phn: "Murrumbidgee", gp: 616.1, screen: 59.43, low: false },
+      { phn: "Central & Eastern Sydney", gp: 558.2, screen: 52.90, low: false },
+      { phn: "Northern Sydney", gp: 586.0, screen: 50.00, low: false },
+      { phn: "Hunter New England and Central Coast", gp: 612.3, screen: 56.28, low: false },
+      { phn: "Nepean Blue Mountains", gp: 657.8, screen: 49.03, low: false },
+      { phn: "North Coast", gp: 663.5, screen: 55.98, low: false },
+      { phn: "South Eastern Sydney", gp: 696.5, screen: 58.05, low: false },
+      { phn: "Western Sydney", gp: 750.8, screen: 44.43, low: true },
+      { phn: "South Western Sydney", gp: 754.3, screen: 48.14, low: true }
+    ];
+
+    const tbody = document.querySelector("#fullTable tbody");
+    [...data].sort((a, b) => a.screen - b.screen).forEach(d => {
+      const tr = document.createElement("tr");
+      if (d.low) tr.className = "low";
+      tr.innerHTML = `<td>${d.phn}</td><td>${d.gp.toFixed(1)}</td><td>${d.screen.toFixed(1)}%</td>`;
+      tbody.appendChild(tr);
+    });
+
+    Chart.defaults.font.family = 'system-ui, sans-serif';
+    Chart.defaults.font.size = 12;
+
+    const short = n => n.replace(" and Central Coast", "").replace("South Western", "SW Sydney").replace("South Eastern", "SE Sydney").replace("Hunter New England", "HNE");
+
+    new Chart(document.getElementById("gpChart"), {
+      type: "bar",
+      data: {
+        labels: [...data].sort((a,b)=>a.gp-b.gp).map(d=>d.phn),
+        datasets: [{ data: [...data].sort((a,b)=>a.gp-b.gp).map(d=>d.gp), backgroundColor: [...data].sort((a,b)=>a.gp-b.gp).map(d=>d.low?"#ea580c":"#75a1c7"), borderRadius: 3 }]
+      },
+      options: {
+        indexAxis: "y",
+        plugins: { legend: { display: false }, tooltip: { callbacks: { title: c => c[0].label, label: c => `${c.raw.toFixed(1)} Medicare GP services per 100 people` } } },
+        scales: {
+          x: { title: { display: true, text: "Medicare GP services per 100 population (not number of GPs)", font: { weight: "600" } } },
+          y: { ticks: { callback: (_, i) => short([...data].sort((a,b)=>a.gp-b.gp)[i].phn) } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById("screenChart"), {
+      type: "bar",
+      data: {
+        labels: [...data].sort((a,b)=>a.screen-b.screen).map(d=>d.phn),
+        datasets: [{ data: [...data].sort((a,b)=>a.screen-b.screen).map(d=>d.screen), backgroundColor: [...data].sort((a,b)=>a.screen-b.screen).map(d=>d.low?"#ea580c":"#4e79a7"), borderRadius: 3 }]
+      },
+      options: {
+        indexAxis: "y",
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `${c.raw.toFixed(1)}% of eligible women screened` } } },
+        scales: {
+          x: { title: { display: true, text: "BreastScreen participation (% of eligible women 50–74)", font: { weight: "600" } }, min: 40, max: 62 },
+          y: { ticks: { callback: (_, i) => short([...data].sort((a,b)=>a.screen-b.screen)[i].phn) } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById("scatterChart"), {
+      type: "scatter",
+      data: {
+        datasets: [{
+          data: data.map(d => ({ x: d.gp, y: d.screen, label: d.phn })),
+          backgroundColor: data.map(d => d.low ? "#ea580c" : "#1f6f8b"),
+          pointRadius: 8
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: c => [`${data[c.dataIndex].phn}`, `GP: ${c.raw.x.toFixed(1)}/100`, `Screening: ${c.raw.y.toFixed(1)}%`] } }
+        },
+        scales: {
+          x: { title: { display: true, text: "Medicare GP services per 100 population", font: { weight: "600" } }, min: 520, max: 780 },
+          y: { title: { display: true, text: "BreastScreen participation (%)", font: { weight: "600" } }, min: 40, max: 62 }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
