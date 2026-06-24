@@ -1,0 +1,32 @@
+---
+description: Git commit rules for this project
+alwaysApply: true
+---
+
+# Git commits
+
+## Author attribution
+
+- Commits must be authored **only by the user**, not by Cursor or any agent.
+- **Never** add `Co-authored-by`, `Signed-off-by`, or any other commit trailer attributing Cursor or an AI tool.
+- Write commit messages as if the user is committing their own work.
+
+## When committing
+
+- Only commit when the user explicitly asks.
+- Use a HEREDOC for the commit message body.
+- Do not amend or force-push unless the user explicitly asks.
+- If rewriting history to remove co-author trailers, use `--force-with-lease` only when the user has asked to fix history.
+
+## Example
+
+```bash
+git commit -m "$(cat <<'EOF'
+Short summary line.
+
+Optional body in plain sentences.
+EOF
+)"
+```
+
+No trailers. No `Co-authored-by` line.
