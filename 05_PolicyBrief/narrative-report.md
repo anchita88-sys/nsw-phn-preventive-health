@@ -273,13 +273,7 @@ The gap between lowest and highest PHN is **15 percentage points** — substanti
 | **How** | Publish annual PHN dashboards with GP utilisation, screening participation, and CALD/access indicators side by side |
 | **Success measure** | Transparent public reporting; equity metrics embedded in PHN annual plans |
 
----
-
-## 7. Conclusion
-
 Preventive healthcare access in NSW is **not uniform** across PHNs. The data show a clear disconnect in Western Sydney: **high Medicare GP activity alongside the state's lowest BreastScreen participation**. Cultural diversity and access-delay indicators suggest **equity-focused outreach and navigation support** — not GP supply alone — should drive policy.
-
-**Recommended primary format for audiences:** This linear narrative report (Google Doc or PDF export), with charts embedded inline. Tableau dashboards are better suited to exploratory analysis by analysts, not general policy or community audiences.
 
 ---
 
